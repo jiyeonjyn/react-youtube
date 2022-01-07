@@ -1,0 +1,13 @@
+.detail {
+  padding: 0.2em;
+}
+
+.title,
+.channelTitle {
+  padding: 0.2em 0;
+}
+
+.description {
+  white-space: pre-wrap;
+  padding: 0.5em 0;
+}
