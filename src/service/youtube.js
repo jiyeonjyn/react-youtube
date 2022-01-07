@@ -15,7 +15,7 @@ class Youtube {
       params: {
         part: "snippet",
         chart: "mostPopular",
-        maxResult: "25",
+        maxResults: 26, //숫자는 따옴표로 감싸지 않기
       },
     });
     return response.data.items; // json으로 자동 변환, 그 중 items 항목 리턴
@@ -27,12 +27,15 @@ class Youtube {
       // search api 사용
       params: {
         part: "snippet",
-        maxResult: "25",
+        maxResults: 26,
         q: query,
         type: "video",
       },
     });
-    return response.data.items; // json으로 자동 변환, 그 중 items 항목 리턴
+    return response.data.items.map((item) => ({
+      ...item,
+      id: item.id.videoId,
+    }));
     // https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&type=video&key=${this.key}
   }
 }
