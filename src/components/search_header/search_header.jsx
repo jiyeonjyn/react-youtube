@@ -36,7 +36,7 @@ const SearchHeader = ({ onSearch }) => {
       <button className={styles.button} type="submit" onClick={onClick}>
         <img
           className={styles.buttonImg}
-          src="https://jiyeonjyn.github.io/react-youtube/images/lsearch.png"
+          src="https://jiyeonjyn.github.io/react-youtube/images/search.png"
           alt="search"
         />
       </button>
